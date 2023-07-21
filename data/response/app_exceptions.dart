@@ -22,3 +22,15 @@ class BadRequestException extends AppExceptions {
       : super(message, 'Invalid request');
 
 }
+
+class UnAuthorizedException extends AppExceptions {
+  UnAuthorizedException ([String? message])
+      : super(message, 'UnAuthorized request');
+
+}
+
+class InvalidInputException extends AppExceptions {
+  InvalidInputException([String? message])
+      : super(message, 'Invalid input');
+
+}
