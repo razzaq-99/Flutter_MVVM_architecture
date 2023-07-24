@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm/utils/routes/routes_name.dart';
 
+import '../utils/utils.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,7 +21,11 @@ class _LoginScreenState extends State<LoginScreen> {
       body: InkWell(
           onTap: () {
 
-            Navigator.pushNamed(context, RoutesName.home);
+            Utils.flushBarErrorMessage('no internet connection', context);
+            // Utils.toastMessage("No internet connection");
+            // Utils.toastMessage("I repeat ");
+
+            // Navigator.pushNamed(context, RoutesName.home);
 
             // Navigator.push(context,
             //     MaterialPageRoute(builder: (context) => const HomeScreen()));
