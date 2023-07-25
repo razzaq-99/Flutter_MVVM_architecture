@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm/utils/routes/routes_name.dart';
 import 'package:flutter_mvvm/view/home_screen.dart';
-import 'package:flutter_mvvm/view/login_screen.dart';
+import 'package:flutter_mvvm/view/login_view.dart';
 
 class Routes {
   static MaterialPageRoute generateRoute(RouteSettings settings) {
@@ -13,7 +13,7 @@ class Routes {
 
       case RoutesName.login:
         return MaterialPageRoute(
-            builder: (BuildContext context) => const LoginScreen());
+            builder: (BuildContext context) => const LoginView());
 
       default:
         return MaterialPageRoute(builder: (_) {
