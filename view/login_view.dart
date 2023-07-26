@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm/resources/components/round_button.dart';
 import 'package:flutter_mvvm/utils/routes/routes_name.dart';
+import 'package:flutter_mvvm/view_model/auth_view_model.dart';
+import 'package:provider/provider.dart';
 
 import '../utils/utils.dart';
 import 'home_screen.dart';
@@ -35,6 +37,9 @@ class _LoginViewState extends State<LoginView> {
   }
   @override
   Widget build(BuildContext context) {
+
+    final authViewModel = Provider.of<AuthViewModel>(context);
+
 
 
     final height = MediaQuery.of(context).size.height * 1;
@@ -118,6 +123,11 @@ class _LoginViewState extends State<LoginView> {
                      Utils.flushBarErrorMessage("Password must be strong", context);
                   }
                   else{
+                       Map data ={
+                         'email' : emailcontroller.text.toString(),
+                         'password' : passwordcontroller.text.toString()
+                       };
+                    authViewModel.LoginApi(data,context);
                         Utils.flushBarErrorMessage("Api hit", context);                  }
                 },
               ),
