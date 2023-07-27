@@ -2,7 +2,8 @@
 
 class RoutesName{
 
-  static const String login = "Login Screen";
+  static const login = "Login Screen";
+  static const signUp= "Sign Up";
 
   static const String home = "Home Screen";
 

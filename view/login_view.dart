@@ -131,6 +131,15 @@ class _LoginViewState extends State<LoginView> {
                         Utils.flushBarErrorMessage("Api hit", context);                  }
                 },
               ),
+              SizedBox(
+                height: height * .02,
+              ),
+              InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, RoutesName.signUp );
+                },
+                  child: const Text("don't have any account? Sign Up",style: TextStyle(fontSize: 18),)),
+
             ],
           ),
         ),

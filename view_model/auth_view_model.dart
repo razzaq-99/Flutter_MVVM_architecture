@@ -10,6 +10,23 @@ class AuthViewModel with ChangeNotifier {
 
   Future<void> LoginApi(dynamic data, BuildContext context) async {
     _myRepo.loginApi(data).then((value) {
+      Utils.flushBarErrorMessage("Login Successfully", context);
+      Navigator.pushNamed(context, RoutesName.home);
+      if(kDebugMode){
+        print(value.toString());
+      }
+    }).onError((error, stackTrace) {
+      if(kDebugMode){
+        // Utils.flushBarErrorMessage(error.toString(), context);
+
+        print(error.toString());
+      }
+    });
+  }
+
+  Future<void> SignUpAPi(dynamic data, BuildContext context) async {
+    _myRepo.registerApi(data).then((value) {
+      Utils.flushBarErrorMessage("Sign Up Successfully", context);
       Navigator.pushNamed(context, RoutesName.home);
       if(kDebugMode){
         print(value.toString());
