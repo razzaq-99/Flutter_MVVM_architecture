@@ -123,10 +123,15 @@ class _LoginViewState extends State<LoginView> {
                      Utils.flushBarErrorMessage("Password must be strong", context);
                   }
                   else{
-                       Map data ={
-                         'email' : emailcontroller.text.toString(),
-                         'password' : passwordcontroller.text.toString()
-                       };
+                       // Map data ={
+                       //   'email' : emailcontroller.text.toString(),
+                       //   'password' : passwordcontroller.text.toString()
+                       // };
+
+                    Map data ={
+                      'email' : 'eve.holt@reqres.in',
+                      'password' : 'cityslicka'
+                    };
                     authViewModel.LoginApi(data,context);
                         Utils.flushBarErrorMessage("Api hit", context);                  }
                 },

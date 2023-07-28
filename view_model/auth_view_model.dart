@@ -13,13 +13,14 @@ class AuthViewModel with ChangeNotifier {
       Utils.flushBarErrorMessage("Login Successfully", context);
       Navigator.pushNamed(context, RoutesName.home);
       if(kDebugMode){
-        print(value.toString());
+        // print(value.toString());
+        Navigator.pushNamed(context, RoutesName.home);
       }
     }).onError((error, stackTrace) {
       if(kDebugMode){
         // Utils.flushBarErrorMessage(error.toString(), context);
 
-        print(error.toString());
+        // print(error.toString());
       }
     });
   }
