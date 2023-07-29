@@ -17,19 +17,24 @@ class _HomeScreenState extends State<HomeScreen> {
     final userPreferences = Provider.of<UserViewModel>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("Home Widget")),
+        automaticallyImplyLeading: false,
+        actions: [
+          Center(child: InkWell(
+              onTap: (){
+                userPreferences.removeUser().then((value){
+                  Navigator.pushNamed(context, RoutesName.login);
+                });
+              },
+              child: Text("Log out"))),
+          SizedBox(width: 20,)
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children:  [
-          Center(child: InkWell(
-            onTap: (){
-              userPreferences.removeUser().then((value){
-                Navigator.pushNamed(context, RoutesName.login);
-              });
-            },
-            child: Text("Log out")))],
+        children: const [
+
+        ],
       ),
     );
   }
